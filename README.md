@@ -84,10 +84,20 @@ Selecione o tipo que melhor atende sua necessidade:
 ### Disco do SO
 - SSD Premium recomendado para produção
 - Tamanhos disponíveis a partir de 127 GiB
+- **Excluir com VM**: Opção que determina se o disco será automaticamente excluído quando a VM for deletada
 
 ### Discos de dados
 - Adicione discos conforme necessidade de armazenamento
 - Configure políticas de cache baseadas no uso
+- **Excluir com VM**: Importante considerar esta opção para:
+  - **Habilitar** quando o disco for temporário ou específico para aquela VM
+  - **Desabilitar** quando o disco contiver dados que devem persistir após a exclusão da VM
+  - Padrão recomendado para produção: Desabilitar para discos de dados importantes
+ 
+  ### Observações importantes:
+1. Discos marcados como "Excluir com VM" são permanentemente removidos quando a VM é deletada
+2. Para dados críticos, sempre desmarque esta opção e implemente um backup separado
+3. Discos temporários são sempre excluídos com a VM, independente desta configuração
 
 ## 8. Criando a VM
 
